@@ -20,6 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/home', function () {
-//     return view('pages.profile');
-// });
+
+Route::get('/user-profile', 'ImageController@index');
+
+Route::post('/user-profile/update', 'ImageController@update');
+
+Route::get('/user-profile/fetch', 'ImageController@fetch');
