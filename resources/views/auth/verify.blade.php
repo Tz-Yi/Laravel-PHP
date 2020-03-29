@@ -1,9 +1,14 @@
-@extends('layouts.app')
+<!-- Inherit  -->
+@extends('pages.proto-home')
+<!-- CSS -->
+@section('proto-head')
+  <link rel="stylesheet" href="{{ asset('/css/verify.css') }}">
+@endsection
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+@section('proto-content')
+<div class="container fill">
+    <div class="row h-100 justify-content-center">
+        <div class="col-md-8 align-self-center">
             <div class="card">
                 <div class="card-header">{{ __('Verify Your Email Address') }}</div>
 

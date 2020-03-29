@@ -1,9 +1,15 @@
-@extends('layouts.app')
+@extends('pages.proto-home')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<!-- CSS -->
+@section('proto-head')
+  <link rel="stylesheet" href="{{ asset('/css/login.css') }}">
+  <!-- <script type="text/javascript" src="{{ asset('/js/profile.js') }}"></script> -->
+@endsection
+
+@section('proto-content')
+<div class="container fill">
+    <div class="row h-100 justify-content-center">
+        <div class="col-md-8 align-self-center">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
@@ -53,7 +59,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-outline-primary">
                                     {{ __('Login') }}
                                 </button>
 

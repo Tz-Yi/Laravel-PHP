@@ -1,0 +1,42 @@
+.fill {
+  min-height: 100%;
+  height: 100%;
+}
+
+/* Vertical Center Method 1 */
+.outer {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Vertical Center Method 2 */
+.center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.photo {
+  max-width: 70%;
+  border-radius: 50%;
+  text-align: center !important;
+  margin: 0 auto;
+}
+
+/* Vertical Center Method 3 */
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.text {
+  text-align: center;
+  max-width: 45%;
+  /* background: rgba(0, 0, 0, 0.025); */
+  /* border-radius: 1rem; */
+  /* background-size: cover; */
+  display: block;
+  margin: auto;
+}
