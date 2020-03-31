@@ -14,8 +14,10 @@
     <div class="row h-100 justify-content-center">
         <div class="col-md-8 align-self-center">
             <div class="card">
-                <div class="card-header">{{ __('Upload Profile Picture') }}</div>
-                <div class="card-body">
+                <div class="card-header">{{ __('個人資訊') }}</div>
+                <div class="card-body">{{ __('登入次數: ' . Auth::user()->loginCount) }}</div>
+                <div class="card-footer">
+                  <div>{{ __('上傳個人照片: ') }}</div>
                   <form method="post" action="{{ url('user-profile/update') }}"  enctype="multipart/form-data">
                    @csrf
                     <div class="form-group">
@@ -25,8 +27,8 @@
                       </div>
                      </div>
                     </div>
-                    <div class="form-group" align="center">
-                     <input type="submit" name="update" class="btn btn-primary" value="Submit" />
+                    <div class="form-group" align="right">
+                     <input type="submit" name="update" class="btn btn-outline-dark" value="Submit" />
                     </div>
                   </form>
                 </div>
