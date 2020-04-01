@@ -18,6 +18,11 @@ Hence, My research field is about the combination of ML & Security. In short, it
     </div>
   </div>
 </div>
+
+<footer>
+  <p class="text-center"> Histroy Visitor(s): {{ $counter ?? '0' }}</p>
+</footer>
+
 @endsection
 
 <!-- Mehtod 1 - Without RWD -->

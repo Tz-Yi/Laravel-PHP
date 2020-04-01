@@ -13,16 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.profile');
-});
+// Route::get('/', function () {
+//     return view('pages.profile');
+// });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/user-profile', 'ImageController@index');
 
 Route::post('/user-profile/update', 'ImageController@update');
 
 Route::get('/user-profile/fetch', 'ImageController@fetch');
+
+// Route::get('/home', 'PHP-AnalyticsController@fetch');
