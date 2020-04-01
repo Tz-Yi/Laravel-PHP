@@ -8,9 +8,6 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="/">Author Profile</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link js-scroll-trigger disabled" href="#messageBoard">Message Board</a>
         </li>
       </ul>
