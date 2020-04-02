@@ -22,6 +22,12 @@ Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/messageBoard', 'MessageController@getMessages');
+
+Route::post('/messageBoard/upload', 'MessageController@uploadMessage');
+
+Route::post('/messageBoard/delete', 'MessageController@deleteMessage');
+
 Route::get('/user-profile', 'ImageController@index');
 
 Route::post('/user-profile/update', 'ImageController@update');

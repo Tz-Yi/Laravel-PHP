@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger disabled" href="#messageBoard">Message Board</a>
+          <a class="nav-link js-scroll-trigger" href="/messageBoard">{{ __('Message Board') }}</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
