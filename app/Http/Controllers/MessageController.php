@@ -27,7 +27,12 @@ class MessageController extends Controller
 
     public function getMessages()
     {
-      $messages = Messages::orderBy('created_at', 'desc')->get();
+      $messages = DB::table('messages')
+                        ->join('users', 'messages.name', '=', 'users.id')
+                          ->select('messages.id', 'users.name', 'users.email', 'users.image', 'messages.content')
+                            ->orderBy('messages.created_at', 'desc')
+                              ->paginate(5);
+      // $messages = Messages::orderBy('created_at', 'desc')->get();
       return view('pages.messageBoard')->with('messages', $messages);
     }
 
@@ -66,21 +71,19 @@ class MessageController extends Controller
 
     public function deleteMessage(Request $request)
     {
+      // dd($request->all());
       $user = Auth::user();
       // TODO: Validation
       $validation = $request->validate([
         'id' => 'required',
-        'content' => 'required'
       ]);
 
       // TODO: Error Redirect
 
       // TODO: Delete current message
       Messages::where('id', $request->id)
-                  ->where('name', $user->id)
-                    ->where('content', $request->content)
-                      ->delete();
+                  ->delete();
 
-      return redirect('/messageBoard', 'MessageController@getMessages');
+      return redirect('/messageBoard');
     }
 }
