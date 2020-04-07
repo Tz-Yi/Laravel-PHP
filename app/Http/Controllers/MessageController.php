@@ -71,6 +71,7 @@ class MessageController extends Controller
 
     public function deleteMessage(Request $request)
     {
+      // Debugger Tools
       // dd($request->all());
       $user = Auth::user();
       // TODO: Validation
@@ -78,11 +79,17 @@ class MessageController extends Controller
         'id' => 'required',
       ]);
 
-      // TODO: Error Redirect
+      $message = DB::table('messages')
+                      ->where('name', $user->id)
+                          ->where('id', $request->id)->get();
 
-      // TODO: Delete current message
-      Messages::where('id', $request->id)
-                  ->delete();
+      if (count($message)) {
+        // TODO: Delete current message
+        Messages::where('id', $request->id)
+                    ->delete();
+      } else {
+        // TODO: Error Redirect
+      }
 
       return redirect('/messageBoard');
     }

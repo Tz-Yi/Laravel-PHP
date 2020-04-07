@@ -14,10 +14,14 @@
     <div class="row h-100 justify-content-center">
         <div class="col-md-8 align-self-center">
             <div class="card">
-                <div class="card-header">{{ __('個人資訊') }}</div>
-                <div class="card-body">{{ __('登入次數: ' . Auth::user()->loginCount) }}</div>
+                <div class="card-header text-center">{{ __(' Personal Info. ') }}</div>
+                <div class="card-body">
+                  <p> {{ __('Name - ' . Auth::user()->name) }} </p>
+                  <p> {{ __('E-mail - ' . Auth::user()->email) }} </p>
+                  <p> {{ __('Login Count - ' . Auth::user()->loginCount) }} </p>
+                </div>
                 <div class="card-footer">
-                  <div>{{ __('上傳個人照片: ') }}</div>
+                  <div>{{ __('Upload Profile Picture : ') }}</div>
                   <form method="post" action="{{ url('user-profile/update') }}"  enctype="multipart/form-data">
                    @csrf
                     <div class="form-group">
