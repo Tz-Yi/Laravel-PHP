@@ -44,6 +44,16 @@
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                          <div class="offset-md-4 col-md-6">
+                            <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                            @if($errors->has('g-recaptcha-response'))
+                              <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                            @endif
+                          </div>
+                        </div>
+                        
                         <div class="form-group row mb-0">
                             <div class="col-md-5 offset-md-6">
                                 <button type="submit" class="btn btn-outline-primary">

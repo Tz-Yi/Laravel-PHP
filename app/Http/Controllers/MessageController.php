@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Messages;
+use App\Rules\Captcha;
 
 class MessageController extends Controller
 {
@@ -47,7 +48,8 @@ class MessageController extends Controller
       $user = Auth::user();
       // TODO: Validation
       $validation = $request->validate([
-        'content' => 'required'
+        'content' => 'required|string',
+        'g-recaptcha-response' => new Captcha(),
       ]);
 
       // TODO: Error Redirect

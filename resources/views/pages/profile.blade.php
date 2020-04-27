@@ -13,15 +13,16 @@
       <img class="mx-auto d-block photo" src="/imgs/selfie.jpg" alt="Selfie">
     </div>
     <div class="col-sm-12 col-md-6 text-center align-self-center">
-      I’m a graduate student of the Information & Security program, Electrical Engineering, National Taiwan University. This program aims to train students with <b>Machine Learning & Security skills.</b>
+      My name is Tzu-Yi Liao. I’m a graduate student of the Information & Security program, Electrical Engineering, National Taiwan University. This program aims to train students with <b>Machine Learning & Security skills.</b>
 Hence, My research field is about the combination of ML & Security. In short, it is about how to train a model and protect the private data simultaneously.
+    </div>
+    <div class="col-sm-12 align-self-end">
+      <p class="text-center align-bottom"> Histroy Visitor(s): {{ $counter ?? '0' }}</p>
     </div>
   </div>
 </div>
 
-<footer>
-  <p class="text-center"> Histroy Visitor(s): {{ $counter ?? '0' }}</p>
-</footer>
+
 
 @endsection
 

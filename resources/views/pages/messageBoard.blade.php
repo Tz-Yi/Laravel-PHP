@@ -45,7 +45,9 @@
         @empty
           <p> No messages !</p>
         @endforelse
-        {{ $messages->links() }}
+        <div class="mx-auto">
+          {{ $messages->links() }}
+        </div>
       </div>
       <div class="card">
         <div class="card-header text-center">{{ __('發表留言') }}</div>
@@ -54,13 +56,23 @@
             @csrf
             <div class="form-group row h-50">
               <div class="col-md-10 justify-content-center offset-md-1 h-50 ">
-                <input id="content" type="text" class="form-control" name="content" required autofocus>
+                <textarea id="content" type="text" rows="5" style="height:9rem;" class="form-control" name="content" required autofocus></textarea>
               </div>
             </div>
-            <div class="form-groupmb-0" align="right">
-              <button type="submit" class="btn btn-outline-primary">
-                {{ __('Post') }}
-              </button>
+            <div class="form-group row">
+              <div class="offset-md-3 col-md-6">
+                <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                @if($errors->has('g-recaptcha-response'))
+                  <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                @endif
+              </div>
+              <div class="col-md-1">
+                <div class="form-groupmb-0 my-auto">
+                  <button type="submit" class="btn btn-outline-primary">
+                    {{ __('Post') }}
+                  </button>
+                </div>
+              </div>
             </div>
           </form>
         </div>

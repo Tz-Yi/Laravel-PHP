@@ -4,6 +4,8 @@
 <!-- For Search engine -->
 <meta name="author" content="Tzu-Yi Liao">
 <meta name="csrf-token" content="{{ csrf_token() }}">
+<!-- For Google RECAPTCHA -->
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 <!-- BS4 -->
