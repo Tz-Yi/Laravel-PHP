@@ -22,7 +22,7 @@ class ImageController extends Controller
      $image = Image::make($image_file)->resize(32, 32);
      // Response::make($image->encode('jpeg'));
 
-     Images::where('name', $user->name)
+     Images::where('email', $user->email)
                 ->update(array('image' => $image->encode('jpeg')));
 
      return redirect('user-profile')->with('success', 'Image store in database successfully');
