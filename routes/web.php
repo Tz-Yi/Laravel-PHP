@@ -35,3 +35,6 @@ Route::post('/user-profile/update', 'ImageController@update');
 Route::get('/user-profile/fetch', 'ImageController@fetch');
 
 // Route::get('/home', 'PHP-AnalyticsController@fetch');
+
+/* CloudCompting */
+Route::get('/sudoku', 'SudokuController@index')->name('getAnswer');

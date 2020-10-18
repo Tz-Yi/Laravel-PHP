@@ -11,6 +11,11 @@
           <a class="nav-link js-scroll-trigger" href="/messageBoard">{{ __('Message Board') }}</a>
         </li>
       </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/sudoku">{{ __('Sudoku') }}</a>
+        </li>
+      </ul>
       <ul class="navbar-nav ml-auto">
         <!-- Laravel-Auth Links -->
         @guest
